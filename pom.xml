@@ -114,11 +114,11 @@
                         <configuration>
                             <sourceDirs>
                                 <source>
-                                    target/generated-sources/protobuf/grpc-kotlin
+                                    target/generated-sources/protobuf/grpc-java
                                 </source>
                                 <source>src/main/proto</source>
                                 <source>
-                                    target/generated-sources/protobuf/kotlin
+                                    target/generated-sources/protobuf/java
                                 </source>
                                 <source>src/main/kotlin</source>
                             </sourceDirs>
