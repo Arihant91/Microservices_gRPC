@@ -8,17 +8,11 @@ import io.grpc.Channel
 import java.util.logging.Logger
 
 
-class OrderClient {
+class OrderClient(channel: Channel?) {
     private val logger = Logger.getLogger(
         OrderClient::class.java.name
     )
-    private var orderServiceBlockingStub: OrderServiceGrpc.OrderServiceBlockingStub? =
-        null
-
-    constructor(channel: Channel?) {
-        orderServiceBlockingStub =
-            OrderServiceGrpc.newBlockingStub(channel)
-    }
+    private val orderServiceBlockingStub: OrderServiceGrpc.OrderServiceBlockingStub = OrderServiceGrpc.newBlockingStub(channel)
 
     fun getOrders(userId: Int): List<Order?>? {
         logger.info("OrderClient calling the OrderService method")
